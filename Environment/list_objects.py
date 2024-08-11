@@ -13,12 +13,13 @@ def list_object_keys(client, bucket, prefix="", extension=None):
 
     return keys
 
-s3 = boto3.client('s3')
+if __name__ == '__main__':
+    s3 = boto3.client('s3')
 
-# Example usage without extension filter
-response = list_object_keys(s3, "flynch-boto3-08-10-2024", "folder/")
-print(response)
+    # Example usage without extension filter
+    response = list_object_keys(s3, "flynch-boto3-08-10-2024", "folder/")
+    print(response)
 
-# Example usage with extension filter
-response_with_filter = list_object_keys(s3, "flynch-boto3-08-10-2024", "folder/", ".txt")
-print(response_with_filter)
+    # Example usage with extension filter
+    response_with_filter = list_object_keys(s3, "flynch-boto3-08-10-2024", "folder/", ".txt")
+    print(response_with_filter)
